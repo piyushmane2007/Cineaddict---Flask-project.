@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate the movie</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body> 
+    <div class="container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Cineaddict" class="logo">
+        {% if message %}
+            <p class="message">{{message}}</p>
+        {% endif %}
+         <form action="/submit" method="POST">
+            <div class="form-group">
+                <h3>Reviewer's Name:</h3>
+                <input type="text" name="Reviewer" placeholder="Enter your Name">
+            </div>
+
+             <div class="form-group">
+                <h3>Movie :</h3>
+                <select name="movie">
+                    <option value="">Select Movie</option>
+                    <option value="Iron Man">Iron Man</option>
+                    <option value="The Avengers">The Avengers</option>
+                    <option value="Guardians of the galaxy">Guardians of the galaxy</option>
+                    <option value="Black Panther">Black Panther</option>
+                    <option value="Avengers Endgame">Avengers Endgame</option>
+                    <option value="The Marvels">The Marvels</option>
+                    <option value="Spiderman:no way home">Spiderman:no way home</option>
+                    <option value="Eternals">Eternals</option>
+                    <option value="Captain America:Civil War">Captain America:Civil War</option>
+                    <option value="Black Widow">Black Widow</option>
+                </select>
+            </div> 
+            <div class="form-group">
+                <h3>Rate the movie:</h3>
+                <input type="radio" name="rating" value="1">1
+                <input type="radio" name="rating" value="2">2
+                <input type="radio" name="rating" value="3">3
+                <input type="radio" name="rating" value="4">4
+                <input type="radio" name="rating" value="5">5
+                <input type="radio" name="rating" value="6">6
+                <input type="radio" name="rating" value="7">7
+                <input type="radio" name="rating" value="8">8
+                <input type="radio" name="rating" value="9">9
+                <input type="radio" name="rating" value="10" checked>10
+            </div>
+            <div class="form-group">
+                <h3>Comments about your experience:</h3>
+                <textarea
+                name="Comments"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Tell us what you liked about the movie and/or what you did not like">
+           </textarea>  <!--textarea is used for multiline input box -->
+            <input type="submit" value="Submit" class="btn">
+            </div>
+         </form>
+
+    </div>
+    <footer>Created by <span>Piyush Mane</span></footer>
+    
+</body>
+</html>
